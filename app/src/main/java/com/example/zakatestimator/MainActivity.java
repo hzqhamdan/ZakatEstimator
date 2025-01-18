@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_share) {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out the Zakat Estimator app! GitHub: https://github.com/yourusername/yourproject");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out the Zakat Estimator app! GitHub: https://github.com/hzqhamdan/ZakatEstimator");
             startActivity(Intent.createChooser(shareIntent, "Share via"));
             return true;
         }
