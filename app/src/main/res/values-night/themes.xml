@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Main Theme for Dark Mode -->
+    <style name="Theme.ZakatEstimator" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- Custom Button Style -->
+    <style name="CustomButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/buttonColor</item>
+        <item name="android:textColor">@color/buttonTextColor</item>
+    </style>
+
+    <!-- Action Bar Style -->
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="background">@color/colorPrimary</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+
+    <!-- Action Bar Title Text Style -->
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/actionBarTextColor</item> <!-- Set Action Bar title text color -->
+    </style>
+
+    <!-- Text Appearance Styles -->
+    <style name="PrimaryTextAppearance" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/textColorPrimary</item> <!-- Apply primary text color -->
+    </style>
+
+    <style name="SecondaryTextAppearance" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textColor">@color/textColorSecondary</item> <!-- Apply secondary text color -->
+    </style>
+</resources>

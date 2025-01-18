@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" style="center">Zakat Estimator</string>
+    <string name="page_name" style="center">About</string>
+    <string name="version_info">Version 1.0</string>
+    <string name="student_name">Developed by: Muhammad Haziq Hanafi bin Muhammad Hamdan</string>
+    <string name="student_number">Student Number: 2023380283</string>
+    <string name="program_code">Programme Code: CDCS240</string>
+    <string name="copyright_notice">Copyright © 2023. All Rights Reserved.</string>
+    <string name="github_button_text">Visit App GitHub Page</string>
+    <string name="zakatpayable">Payable Zakat: RM</string>
+    <string name="goldweight">Enter gold weight (g)</string>
+    <string name="goldvalue">Enter current gold value (per gram)</string>
+    <string name="keepbutton">Keep</string>
+    <string name="wearbutton">Wear</string>
+    <string name="calculatebutton">CALCULATE BUTTON</string>
+    <string name="totalgoldvalue">Total Value of Gold: RM</string>
+    <string name="totalzakat">Total Zakat: RM</string>
+    <string name="aboutbutton">ABOUT</string>
+    <string name="darkmodeswitch">Dark Mode Switch</string>
+    <string name="share">Share</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#77685D</color>
+    <color name="actionBarTextColor">#071108</color>
+    <color name="colorPrimaryDark">#77685D</color>
+    <color name="colorAccent">#483D3F</color>
+    <color name="backgroundColor">#E8EDDF</color>
+    <color name="cardBackgroundColor">#CAFFB9</color>
+    <color name="buttonColor">#FF9800</color>
+    <color name="buttonTextColor">#000000</color>
+    <color name="darkBrown">#F4EBD9</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="textColorSecondary">#000000</color>
+    <color name="hintTextColor">#A9A9A9</color> <!-- Light gray -->
+</resources>
