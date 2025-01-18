@@ -2,29 +2,29 @@ package com.example.zakatestimator;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toolbar;
 import android.content.SharedPreferences;
-
+import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 
 public class MainActivity extends AppCompatActivity {
     private EditText goldWeightInput, goldValueInput;
     private RadioButton keepRadioButton, wearRadioButton;
-    private Button calculateButton;
+    private Button calculateButton;  // Remove final initialization here
     private TextView totalGoldValueText, zakatPayableText, totalZakatText;
-
+    private SwitchCompat switchTheme;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -37,17 +37,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+        // Initialize views after setContentView
         RelativeLayout mainLayout = findViewById(R.id.main);
-        mainLayout.setBackgroundColor(getResources().getColor(R.color.backgroundColor));
+        mainLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.backgroundColor));
 
         goldWeightInput = findViewById(R.id.goldweight);
         goldValueInput = findViewById(R.id.goldvalue);
         keepRadioButton = findViewById(R.id.keep);
         wearRadioButton = findViewById(R.id.wear);
-        calculateButton = findViewById(R.id.button2);
         totalGoldValueText = findViewById(R.id.totalgoldvalue);
         zakatPayableText = findViewById(R.id.zakatpayable);
         totalZakatText = findViewById(R.id.totalzakat);
+
+        // Initialize the calculateButton here after setContentView
+        calculateButton = findViewById(R.id.button2);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -63,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        // OnClickListener for calculateButton
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("settings", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        Switch switchTheme = findViewById(R.id.switch1);
+        switchTheme = findViewById(R.id.switch1);
 
         boolean isDarkMode = preferences.getBoolean("dark_mode", false);
         switchTheme.setChecked(isDarkMode);
@@ -99,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_share) {
@@ -111,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-
     }
 
     private void calculateZakat() {
@@ -130,13 +132,11 @@ public class MainActivity extends AppCompatActivity {
         double goldWeight = Double.parseDouble(goldWeightStr);
         double goldValue = Double.parseDouble(goldValueStr);
 
-
         double nisabKeep = 85.0;
         double nisabWear = 200.0;
         double zakatRate = 0.025;
 
         double zakatPayableWeight;
-
 
         if (keepRadioButton.isChecked()) {
             zakatPayableWeight = goldWeight > nisabKeep ? goldWeight - nisabKeep : 0;
@@ -147,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
         double totalGoldValue = goldWeight * goldValue;
         double totalZakatPayableValue = zakatPayableWeight * goldValue;
         double totalZakat = totalZakatPayableValue * zakatRate;
-
 
         totalGoldValueText.setText(String.format("Total Value of Gold: RM %.2f", totalGoldValue));
         zakatPayableText.setText(String.format("Zakat Payable: RM %.2f", totalZakatPayableValue));
